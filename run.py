@@ -1,18 +1,13 @@
-from App import ntfy
 import asyncio
+from app.services import NtfyService
 
-app = ntfy()
-data = {'text':'New messages on Reddit',
-        'Click': 'https://www.reddit.com/message/messages',
-        'topic_name':'zuli_s'}
-
-result = asyncio.run(app.send_message_to_reddit(data))
-print(result)
-
-
-
-payload = {'topic_name' : 'test',
-           'data': 'imperum test'}
-
-result = asyncio.run(app.send_message(data))
-print(result)
+if __name__ == "__main__":
+        app = NtfyService()
+        data = {
+                'text':'New messages on Reddit',
+                'Click': 'https://www.reddit.com/message/messages',
+                'topic_name':'jhon doe'
+        }
+        
+        result = asyncio.run(app.send_message_to_reddit(data))
+        print(result)
