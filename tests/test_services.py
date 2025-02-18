@@ -10,3 +10,6 @@ async def test_send_message():
     
     assert isinstance(response, dict)
     assert "text" in response
+
+
+""" To run the test, enter the following command in the terminal: pytest tests/"""
